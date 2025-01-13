@@ -1,0 +1,34 @@
+# Large data files
+src/data/creditcard.csv
+data/creditcard.csv
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+
+# Model files
+*.pkl
+models/*.pkl
+
+# Logs
+logs/
+*.log
+
+# Monitoring reports
+monitoring/reports/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

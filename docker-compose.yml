@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./monitoring/reports:/app/monitoring/reports
+    
+  monitoring:
+    build: .
+    command: python src/monitoring/monitoring_service.py
+    volumes:
+      - ./monitoring/reports:/app/monitoring/reports
+    depends_on:
+      - app
+      
+  dashboard:
+    build: .
+    command: streamlit run src/monitoring/dashboard.py
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./monitoring/reports:/app/monitoring/reports
+    depends_on:
+      - monitoring

@@ -1,0 +1,15 @@
+model_path: "models/fraud_detection_model.pkl"
+scaler_path: "models/scaler.pkl"
+feature_columns:
+  - amount
+  - time
+target_column: "fraud"
+test_size: 0.2
+random_state: 42
+monitoring:
+  reference_data_path: "data/reference_data.csv"
+  monitoring_db_path: "monitoring/monitoring.db"
+  report_path: "monitoring/reports"
+  drift_threshold: 0.1
+  monitoring_period_days: 7
+  
